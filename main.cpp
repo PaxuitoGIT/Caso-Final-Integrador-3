@@ -26,4 +26,9 @@ public:
         json j = json::parse(jsonString);
         return Variant(j.get<VariantType>());
     }
+
+     void parse_json(const std::string& jsonString) {
+        json j = json::parse(jsonString);
+        value = j.get<VariantType>();
+    }
 }
