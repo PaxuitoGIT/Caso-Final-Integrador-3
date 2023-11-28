@@ -16,4 +16,9 @@ public:
     std::string to_string() {
         return std::visit([](auto&& arg) { return std::to_string(arg); }, value);
     }
+    
+       std::string to_json_string() {
+        json j = value;
+        return j.dump();
+    }
 }
