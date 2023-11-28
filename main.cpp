@@ -12,4 +12,8 @@ public:
 
     Variant() = default;
     Variant(VariantType value) : value(value) {}
+
+    std::string to_string() {
+        return std::visit([](auto&& arg) { return std::to_string(arg); }, value);
+    }
 }
